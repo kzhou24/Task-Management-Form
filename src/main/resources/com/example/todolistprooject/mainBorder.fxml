@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<BorderPane fx:id="main" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.todolistprooject.HelloController">
+    <top>
+        <VBox>
+        <MenuBar>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="New ..." onAction="#showNewDialogItem"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit"/>
+                </items>
+            </Menu>
+        </MenuBar>
+        </VBox>
+        <ToolBar>
+            <HBox>
+                <Button text="New..." onAction="#showNewDialogItem"/>
+                <ToggleButton fx:id="toggleButton" text="Today's item" onAction="#setToggleButton">
+                    <tooltip>
+                        <Tooltip text="Button down: today's item only; Button up: all items"/>
+                    </tooltip>
+                </ToggleButton>
+            </HBox>
+        </ToolBar>
+    </top>
+    <left>
+        <ListView fx:id="todoItemListView">
+
+
+        </ListView>
+    </left>
+    <center>
+        <VBox>
+        <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" style="-fx-background-color:white" wrapText="true"/>
+         <HBox>
+             <Label text="Deadline :">
+                 <font>
+                     <Font name="Times New Roman bold"  size="20"/>
+                 </font>
+             </Label>
+             <Label fx:id="deadlineLabel">
+             <font>
+                 <Font name="Times New Roman bold"  size="20"/>
+             </font>
+             </Label>
+         </HBox>
+        </VBox>
+    </center>
+</BorderPane>
